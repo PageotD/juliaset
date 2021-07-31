@@ -157,7 +157,7 @@ class JuliaSet:
                 
                 # Calculate the shade (a cool thing find somewhere on the net)
                 shade = 1. - np.sqrt(it/niter)
-                print(ix, iy, it, shade) 
+
                 # Fill the outpout array
                 julia[ix][iy] = ssign * shade
 
@@ -199,4 +199,4 @@ class JuliaSet:
 if __name__ == "__main__":
     # execute only if run as a script
     genJuliaSet = JuliaSet()
-    genJuliaSet.run() #show=True)
+    genJuliaSet.run()
