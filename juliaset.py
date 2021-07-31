@@ -15,7 +15,7 @@ class JuliaSet:
         self.size = size
         self.dpi = dpi
 
-    def run(self, mirror=False, show=False, fname='juilaset-output'):
+    def run(self, mirror=False, norm=True, show=False, fname='juilaset-output'):
         """
         Run the Julia set generator
 
@@ -35,6 +35,10 @@ class JuliaSet:
 
         # Process
         julia = self.processJulia(cpxNum, xrng, yrng)
+
+        # Normalization
+        if(norm):
+            julia /= np.amax(np.abs(julia))
 
         # Mirroring
         if(mirror):
@@ -160,9 +164,6 @@ class JuliaSet:
 
                 # Fill the outpout array
                 julia[ix][iy] = ssign * shade
-
-        # Normalization
-        julia /= np.amax(np.abs(julia))
 
         return julia
 

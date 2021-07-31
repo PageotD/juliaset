@@ -13,6 +13,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - `julia-output-mirror-example.png`
 
 ### Changed
+- normalization is now an option `norm` of the `run()` method
 
 ### Fixed
 
