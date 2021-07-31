@@ -15,7 +15,7 @@ class JuliaSet:
         self.size = size
         self.dpi = dpi
 
-    def run(self, show=False, fname='juilaset-output'):
+    def run(self, mirror=False, show=False, fname='juilaset-output'):
         """
         Run the Julia set generator
 
@@ -35,6 +35,15 @@ class JuliaSet:
 
         # Process
         julia = self.processJulia(cpxNum, xrng, yrng)
+
+        # Mirroring
+        if(mirror):
+            # Horizontal mirroring and concatenate
+            juliamirror = np.flip(julia, axis=1)
+            julia = np.concatenate((julia, juliamirror), axis=1)
+            # Vertical mirroring and concatenate
+            juliamirror = np.flip(julia, axis=0)
+            julia = np.concatenate((julia, juliamirror), axis=0)
 
         # Plot the output with a random colormap using matplotlib
         self.plotJuliaSet(julia, show=show, fname=fname)
@@ -148,7 +157,7 @@ class JuliaSet:
                 
                 # Calculate the shade (a cool thing find somewhere on the net)
                 shade = 1. - np.sqrt(it/niter)
-
+                print(ix, iy, it, shade) 
                 # Fill the outpout array
                 julia[ix][iy] = ssign * shade
 
