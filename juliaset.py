@@ -7,6 +7,8 @@ class JuliaSet:
 
     def __init__(self, size=256, dpi=300):
         """
+        Constructor of the JuliaSet class
+
         :param size: size in pixels (for both width and height)
         :param dpi: dots per inch (default 300)
         """
@@ -19,6 +21,11 @@ class JuliaSet:
         """
         Run the Julia set generator
 
+        :param mirror: if True the julia is mirrored horizontally and
+            vertically; each mirror is concatenate with the original
+            to produce a new image
+        :param norm: if true the Julia set is normalized by its
+            absolute maximum value.
         :param show: if show is `False` th eoutput image will be
             written as a PNG file named `fname`
         :param fname: Name of the output PNG file to write on disk
@@ -56,6 +63,8 @@ class JuliaSet:
         """
         Random choice in a list of best complex values for Julia 
         sets (real, imag).
+
+        :return cpxNum: a semi-random complex value
         """
 
         # Define the list of best complex values 
@@ -73,11 +82,12 @@ class JuliaSet:
 
         return cpxNum
 
-    def twearkComplex(self, cpxNum):
+    def twearkComplex(self, cpxTmp):
         """
         Manipulate the base value slightly to make it a little more unique.
 
-        :param cpxNum: complex value to modify
+        :param cpxTmp: complex value to modify
+        :param cpxNum: a slightly manipulate version of the input
         """
 
         # Get the signs for the imaginary parts
@@ -119,6 +129,11 @@ class JuliaSet:
 
     def processJulia(self, cpxNum, xrng, yrng, escrad=3, niter=250):
         """
+        Calculate the Julia set for the given input parameters.
+
+        :param cpxNum: complex value acting as a seed for the Julia set
+        :param xrng: range of values (min, max) for the x-axis
+        :param yrng: range of values (min, max) for the y-axis
         :param escrad: escape radius
         :param niter: maximum number of iterations
         """
@@ -169,10 +184,13 @@ class JuliaSet:
 
     def plotJuliaSet(self, julia, fname='juilaset-output', show=False):
         """
-        Plot the output Julia set
+        Plot the output Julia set and show it in matplotlib window or
+        write it on disk as a png file.
 
-        :param escrad: escape radius
-        :param niter: maximum number of iterations
+        :param julia: the Julia set
+        :param show: if show is `False` th eoutput image will be
+            written as a PNG file named `fname`
+        :param fname: Name of the output PNG file to write on disk
         """
 
         # List of beautiful colormap for Julia sets

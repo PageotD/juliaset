@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Changed
 - normalization is now an option `norm` of the `run()` method
+- general improvement of the `docstring` contents
 
 ### Fixed
 
