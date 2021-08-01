@@ -139,7 +139,7 @@ class JuliaSet:
         """
 
         # Initialize numpy array of dimensions (size, size) with zeros
-        julia = np.zeros((self.size, self.size), dtype=np.float32)
+        julia = np.ones((self.size, self.size), dtype=np.float32)
 
         # Calculate the width (equal to height) of the image since the
         # image is defined as a square
