@@ -11,7 +11,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - `CHANGELOG.md`
 - `mirror` option to the `run()` method
 - `julia-output-mirror-example.png`
-- `.github/workflows/juliaset-test-develop.yaml` to test Github-actions
+- `.github/workflows/python3-8.yaml` to test Github-actions
+- `status badge` for the `README.md` file
 
 ### Changed
 - normalization is now an option `norm` of the `run()` method
