@@ -100,8 +100,8 @@ class JuliaSet:
         isigma = random.uniform(0.98, 1.02)
 
         # Apply modification and return the new complex value
-        realPart = cpxNum[0] * rsigma
-        imagPart = cpxNum[1] * isigma * isign
+        realPart = cpxTmp[0] * rsigma
+        imagPart = cpxTmp[1] * isigma * isign
 
         return complex(realPart, imagPart)
 
