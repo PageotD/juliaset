@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [unreleased] - yyyy-mm-dd
 
+## [0.2.0] - 2021-07-31
+
 ### Added
 - `CHANGELOG.md`
 - `mirror` option to the `run()` method
