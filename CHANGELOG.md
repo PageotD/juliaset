@@ -20,6 +20,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
     - `setup.py`
     - `tests` folder
     - `juliaset` folder with `__init__.py` file
+    - `MANIFEST.in`
 
 ### Changed
 - normalization is now an option `norm` of the `run()` method
