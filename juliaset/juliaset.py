@@ -262,7 +262,7 @@ def julia(**kwargs):
     if kwargs is not None:
         juliaInstance.param(**kwargs)
 
-    return JuliaInstance
+    return juliaInstance
 
 if __name__ == "__main__":
     # execute only if run as a script
