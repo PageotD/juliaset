@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - `julia-output-mirror-example.png`
 - `.github/workflows/python3-8.yaml` to test Github-actions
 - `status badge` for the `README.md` file.
+- `Dockerfile` for testing package installation
 - relate to packaging: 
     - `setup.py`
     - `tests` folder

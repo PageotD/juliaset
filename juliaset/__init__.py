@@ -1,1 +1,1 @@
-from juliaset import JuliaSet
+from .juliaset import JuliaSet

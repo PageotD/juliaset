@@ -1,0 +1,28 @@
+# The docker image uses `python:slim-buster` as a base image. 
+# To build a docker image containing `pyiac`, you have launch the following 
+# command from the `pyiac` folder:
+#
+# >>> docker build --no-cache=true -t <name_of_your_image>:<tag> .
+#
+# Then, to run a container:
+#
+# docker run -it -e TOKEN=<your_discord_bot_token>\
+#    --name <name_of_your_container>\
+#    <name_of_your_image>:<tag>
+#
+
+# Use Python:slim-buster as base-image
+FROM python:slim-buster
+
+# Update packages
+RUN apt update -y
+
+# Install required python package using pip3
+RUN pip3 install -r requirements.txt
+
+# Copy pyiac 
+ADD . /app/
+
+# Run pyiac
+WORKDIR /app/
+CMD [ "python3", "setup.py" ]
