@@ -35,19 +35,19 @@ class JuliaSet:
         if kwargs is not None:
             # Image related parameters
             if 'size' in kwargs:
-                self.size = kwargs.get('size', 256)
+                self.size = kwargs.pop('size', 256)
             if 'dpi' in kwargs:
-                self.dpi = kwargs.get('dpi', 300)
+                self.dpi = kwargs.pop('dpi', 300)
             if 'norm' in kwargs:
-                self.norm = kwargs.get('norm', True)
+                self.norm = kwargs.pop('norm', True)
             if 'mirror' in kwargs:
-                self.mirror = kwargs.get('mirror', False)
+                self.mirror = kwargs.pop('mirror', False)
 
             # Process related parameters
             if 'escrad' in kwargs:
-                self.escrad = kwargs.get('escrad', 3)
+                self.escrad = kwargs.pop('escrad', 3)
             if 'niter' in kwargs:
-                self.niter = kwargs.get('niter', 250)
+                self.niter = kwargs.pop('niter', 250)
 
         # If kwargs is not empty there is some invalid keywords
         if kwargs:

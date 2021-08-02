@@ -18,6 +18,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - `juliaset` folder with `__init__.py` file
 - `MANIFEST.in`
 - `pyproject.toml`
+- `tests/test_class_juliaset.py`
 
 ### Changed
 

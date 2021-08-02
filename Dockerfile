@@ -28,6 +28,3 @@ RUN pip install -r /app/requirements.txt
 WORKDIR /app/
 # Build the package
 CMD ["python", "-m build"] 
-# Push the package to testpypi
-CMD ["python", "-m twine upload --repository testpypi dist/*"]
-#[ "python3", "-m build" ]

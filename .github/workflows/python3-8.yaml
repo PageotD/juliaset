@@ -6,7 +6,7 @@ on:
       - develop
 
 jobs:
-  test:
+  build-test:
     runs-on: ubuntu-latest
 
     steps:
@@ -25,5 +25,8 @@ jobs:
           pip install --upgrade build twine
           pip install -r requirements.txt
 
+      - name: tests
+        run: python -m unittest tests.test_class_juliaset
+        
       - name: build package
         run: python -m build
