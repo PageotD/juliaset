@@ -5,7 +5,7 @@ import random
 
 class JuliaSet:
 
-    def __init__(self, size=256, dpi=300):
+    def __init__(self):
         """
         Constructor of the JuliaSet class
 
@@ -13,11 +13,30 @@ class JuliaSet:
         :param dpi: dots per inch (default 300)
         """
 
-        # Set parameters
-        self.size = size
-        self.dpi = dpi
+        # Initialize parameters
+        self.size = 256
+        self.dpi = 300
+        self.norm = True
+        self.mirror = False
+        self.escrad = 3
+        self.niter = 250
 
-    def run(self, mirror=False, norm=True, show=False, fname='juilaset-output'):
+    def param(self, **kwargs):
+        """
+        Get parameters from input dictionary and set attributes.
+
+        :param kwargs: a dictionary in the form 
+            `{'arg1':value, ..., 'argN': value}`
+        """
+
+        self.size = kwargs.get('size', 256)
+        self.dpi = kwargs.get('dpi', 300)
+        self.norm = kwargs.get('norm', True)
+        self.mirror = kwargs.get('mirror', False)
+        self.escrad = kwargs.get('escrad', 3)
+        self.niter = kwargs.get('niter', 250)
+
+    def run(self, show=False, fname='juilaset-output'):
         """
         Run the Julia set generator
 
@@ -44,11 +63,11 @@ class JuliaSet:
         julia = self.processJulia(cpxNum, xrng, yrng)
 
         # Normalization
-        if(norm):
+        if(self.norm):
             julia /= np.amax(np.abs(julia))
 
         # Mirroring
-        if(mirror):
+        if(self.mirror):
             # Horizontal mirroring and concatenate
             juliamirror = np.flip(julia, axis=1)
             julia = np.concatenate((julia, juliamirror), axis=1)
@@ -127,7 +146,7 @@ class JuliaSet:
 
         return xrng, yrng
 
-    def processJulia(self, cpxNum, xrng, yrng, escrad=3, niter=250):
+    def processJulia(self, cpxNum, xrng, yrng):
         """
         Calculate the Julia set for the given input parameters.
 
@@ -168,14 +187,14 @@ class JuliaSet:
                 it = 0
 
                 # Loop over iterations
-                while(np.abs(cpxTmp) <= escrad**2 and it < niter):
+                while(np.abs(cpxTmp) <= self.escrad**2 and it < self.niter):
                     # Quadratic polynomial
                     cpxTmp = cpxTmp**2 + cpxNum
                     # Increment iteration counter
                     it += 1
                 
                 # Calculate the shade (a cool thing find somewhere on the net)
-                shade = 1. - np.sqrt(it/niter)
+                shade = 1. - np.sqrt(it/self.niter)
 
                 # Fill the outpout array
                 julia[ix][iy] = ssign * shade
@@ -214,6 +233,12 @@ class JuliaSet:
         else:
             # Write on disk
             fig.savefig(fname+".png", pad_inches=0.05, bbox_inches='tight')
+
+def julia(**opts):
+    """
+    temp
+    """
+    return JuliaSet()
 
 if __name__ == "__main__":
     # execute only if run as a script

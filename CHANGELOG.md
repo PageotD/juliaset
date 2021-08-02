@@ -11,12 +11,17 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Added
 
+- `param` method to `JuliaSet` class
 - `Dockerfile` for testing package installation
 - `setup.py`
 - `tests` folder
 - `juliaset` folder with `__init__.py` file
 - `MANIFEST.in`
 - `pyproject.toml`
+
+### Changed
+
+- remove arguments from `__init__(self)` of the `JuliaSet` class
 
 ## [0.2.0] - 2021-07-31
 
