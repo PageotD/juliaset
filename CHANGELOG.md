@@ -15,6 +15,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - `julia-output-mirror-example.png`
 - `.github/workflows/python3-8.yaml` to test Github-actions
 - `status badge` for the `README.md` file.
+- relate to packaging: 
+    - `setup.py`
+    - `tests` folder
+    - `juliaset` folder with `__init__.py` file
 
 ### Changed
 - normalization is now an option `norm` of the `run()` method

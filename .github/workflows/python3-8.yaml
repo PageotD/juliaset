@@ -25,4 +25,4 @@ jobs:
           pip install -r requirements.txt
 
       - name: execute py script
-        run: python juliaset.py
+        run: python juliaset/juliaset.py
