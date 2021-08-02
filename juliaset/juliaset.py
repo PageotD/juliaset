@@ -51,7 +51,7 @@ class JuliaSet:
 
         # If kwargs is not empty there is some invalid keywords
         if kwargs:
-            print("{} are invalid keywords arguments!".format(kwargs.keys()))
+            print("{} are invalid keyword arguments!".format(kwargs.keys()))
 
     def run(self, show=False, fname='juilaset-output'):
         """
@@ -251,11 +251,18 @@ class JuliaSet:
             # Write on disk
             fig.savefig(fname+".png", pad_inches=0.05, bbox_inches='tight')
 
-def julia(**opts):
+def julia(**kwargs):
     """
     temp
     """
-    return JuliaSet()
+    # Initialize Julia Set instance
+    juliaInstance = JuliaSet()
+
+    # If kwargs not empty update the attributes
+    if kwargs is not None:
+        juliaInstance.param(**kwargs)
+
+    return JuliaInstance
 
 if __name__ == "__main__":
     # execute only if run as a script
