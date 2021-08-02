@@ -22,8 +22,9 @@ ADD . /app/
 
 # Install required python package using pip3
 RUN pip install --upgrade pip
+RUN pip install --upgrade build && pip install --upgrade twine
 RUN pip install -r /app/requirements.txt
 
 # Run pyiac
 WORKDIR /app/
-#CMD [ "python3", "setup.py install" ]
+CMD [ "python3", "-m build" ]

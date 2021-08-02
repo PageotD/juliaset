@@ -18,5 +18,6 @@ setup(
     author_email='damien.pageot@gmail.com',
     url='https://github.com/PageotD/juliaset',
     license=license,
-    packages=find_packages(exclude=('tests', 'docs'))
+    packages=find_packages(exclude=('tests', 'docs')),
+    python_requires=">=3.8"
 )

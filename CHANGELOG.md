@@ -21,7 +21,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
     - `tests` folder
     - `juliaset` folder with `__init__.py` file
     - `MANIFEST.in`
-
+    - `pyproject.toml`
+    
 ### Changed
 - normalization is now an option `norm` of the `run()` method
 - general improvement of the `docstring` contents
