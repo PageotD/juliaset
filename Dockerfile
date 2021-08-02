@@ -17,12 +17,13 @@ FROM python:slim-buster
 # Update packages
 RUN apt update -y
 
-# Install required python package using pip3
-RUN pip3 install -r requirements.txt
-
 # Copy pyiac 
 ADD . /app/
 
+# Install required python package using pip3
+RUN pip install --upgrade pip
+RUN pip install -r /app/requirements.txt
+
 # Run pyiac
 WORKDIR /app/
-CMD [ "python3", "setup.py" ]
+#CMD [ "python3", "setup.py install" ]
