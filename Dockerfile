@@ -21,10 +21,13 @@ RUN apt update -y
 ADD . /app/
 
 # Install required python package using pip3
-RUN pip install --upgrade pip
-RUN pip install --upgrade build && pip install --upgrade twine
+RUN pip install --upgrade pip 
+RUN pip install --upgrade build twine
 RUN pip install -r /app/requirements.txt
 
-# Run pyiac
 WORKDIR /app/
-CMD [ "python3", "-m build" ]
+# Build the package
+CMD ["python", "-m build"] 
+# Push the package to testpypi
+CMD ["python", "-m twine upload --repository testpypi dist/*"]
+#[ "python3", "-m build" ]
