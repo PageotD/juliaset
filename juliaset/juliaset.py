@@ -13,11 +13,13 @@ class JuliaSet:
         :param dpi: dots per inch (default 300)
         """
 
-        # Initialize parameters
+        # Initialize image related parameters
         self.size = 256
         self.dpi = 300
         self.norm = True
         self.mirror = False
+
+        # Initialize process related parameters
         self.escrad = 3
         self.niter = 250
 
@@ -29,12 +31,27 @@ class JuliaSet:
             `{'arg1':value, ..., 'argN': value}`
         """
 
-        self.size = kwargs.get('size', 256)
-        self.dpi = kwargs.get('dpi', 300)
-        self.norm = kwargs.get('norm', True)
-        self.mirror = kwargs.get('mirror', False)
-        self.escrad = kwargs.get('escrad', 3)
-        self.niter = kwargs.get('niter', 250)
+        # Check if kwargs in not empty
+        if kwargs is not None:
+            # Image related parameters
+            if 'size' in kwargs:
+                self.size = kwargs.get('size', 256)
+            if 'dpi' in kwargs:
+                self.dpi = kwargs.get('dpi', 300)
+            if 'norm' in kwargs:
+                self.norm = kwargs.get('norm', True)
+            if 'mirror' in kwargs:
+                self.mirror = kwargs.get('mirror', False)
+
+            # Process related parameters
+            if 'escrad' in kwargs:
+                self.escrad = kwargs.get('escrad', 3)
+            if 'niter' in kwargs:
+                self.niter = kwargs.get('niter', 250)
+
+        # If kwargs is not empty there is some invalid keywords
+        if kwargs:
+            print("{} are invalid keywords arguments!".format(kwargs.keys()))
 
     def run(self, show=False, fname='juilaset-output'):
         """
