@@ -3,9 +3,11 @@
 ![BSD 3-Clause License](https://img.shields.io/badge/%20License%20-BSD%203--Clause-informational)
 
 # juliaset
-A simple random Julia set generator.
+A simple random Julia set generator. Can take some time to run, so be patient !
 
-Can take some time to run, so be patient !
+This is a small personal project I did to apply some of the skills I learned during my DevOps career transition training.
+
+This package is not initially intended to be distributed and is therefore not present on the Python Package Index ([PyPi](https://pypi.org/)). However, if you wish, you can clone it, fork it, modify it etc. within the limits of the license.
 
 ## Installation
 
@@ -58,3 +60,16 @@ newset2.run(fname='newset2')
 ```
 
 ![newset2](https://raw.githubusercontent.com/PageotD/juliaset/develop/docs/images/juilaset-output-mirror-example.png)
+
+## Parameters
+
+- `size`: size of the array in height and width (not of the output image), default `size=256`
+- `dpi`: _dot per inch_ for the output image, default `dpi=300`
+- `norm`: normalize the julia set by its maximum value, default `norm=True`
+- `mirror`: mirroring the julia set horizontally and vertically, default `mirror=False`
+- `escrad`: escape radius, default `escrad=3`
+- `niter`: maximum number of iterations, default `niter=250`
+
+## Useful links
+
+- https://en.wikipedia.org/wiki/Julia_set
