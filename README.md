@@ -38,7 +38,7 @@ newset1 = julia()
 newset1.run(fname='newset1')
 ```
 
-![newset1](https://github.com/PageotD/juliaset/blob/develop/docs/images/juliaset-output-example.png)
+![newset1](https://raw.githubusercontent.com/PageotD/juliaset/develop/docs/images/juilaset-output-example.png)
 
 ```python
 # Import julia from the juliaset module
@@ -57,4 +57,4 @@ newset2 = julia(mirror=True)
 newset2.run(fname='newset2')
 ```
 
-![newset2](https://github.com/PageotD/juliaset/blob/develop/docs/images/juliaset-output-mirror-example.png)
+![newset2](https://raw.githubusercontent.com/PageotD/juliaset/develop/docs/images/juilaset-output-mirror-example.png)
