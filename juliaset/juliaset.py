@@ -240,6 +240,7 @@ class JuliaSet:
 
         # Plot the image with a gaussian interpolation
         fig = plt.gcf()
+        fig.set_size_inches(3., 3.)
         plt.imshow(julia, interpolation='gaussian', cmap=cmapName)
         
         # Disable axis
@@ -249,7 +250,7 @@ class JuliaSet:
             plt.show()
         else:
             # Write on disk
-            fig.savefig(fname+".png", pad_inches=0.05, bbox_inches='tight')
+            fig.savefig(fname+".png", dpi=self.dpi, pad_inches=0.05, bbox_inches='tight')
 
 def julia(**kwargs):
     """
@@ -267,4 +268,5 @@ def julia(**kwargs):
 if __name__ == "__main__":
     # execute only if run as a script
     genJuliaSet = JuliaSet()
+    genJuliaSet.param()
     genJuliaSet.run()
