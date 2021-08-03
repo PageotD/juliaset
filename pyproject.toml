@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "juliaset"
-version = "0.3.0-dev"
+version = "0.3.0"
 description = "A simple random Julia set generator"
 authors = ["Damien Pageot <74134372+PageotD@users.noreply.github.com>"]
 license = "BSD 3-Clause"
@@ -9,7 +9,6 @@ license = "BSD 3-Clause"
 python = "^3.8"
 matplotlib = "^3.4.2"
 numpy = "^1.21.1"
-build = "^0.5.1"
 
 [tool.poetry.dev-dependencies]
 
