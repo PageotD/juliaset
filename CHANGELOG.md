@@ -7,6 +7,13 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [unreleased] - yyyy-mm-dd
 
+<<<<<<< HEAD
+=======
+### Changed
+
+- `README.md`
+
+>>>>>>> a5a92a9 (Improving README.md)
 ## [0.3.0] - 2021-08-03
 
 ### Added
