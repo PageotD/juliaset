@@ -24,6 +24,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Changed
 
 - remove arguments from `__init__(self)` of the `JuliaSet` class
+- `README.md`
 
 ## [0.2.0] - 2021-07-31
 
